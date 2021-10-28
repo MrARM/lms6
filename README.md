@@ -5,7 +5,7 @@ This repo serves as some research to modify the hex dump of the official firmwar
 **DISCLAIMER:** It's not known if hex dumps from other radiosondes will run fine on your radiosonde. I still haven't fully understood all of the differences between the firmware, BUT likely the differences are calibration data and serial number information.
 
 ## Dumping/Programming Tips
-To connect to the LMS6, I recommend using [Reid's Interface Board(https://github.com/Reid-n0rc/LMS-6_Interface_Board), you only need to add the ST7 Port and the card edge connector.
+To connect to the LMS6, I recommend using [Reid's Interface Board](https://github.com/Reid-n0rc/LMS-6_Interface_Board), you only need to add the ST7 Port and the card edge connector.
 You'll need to use an Rlink programmer with RFlasher7. Select **ST72324J6** for the chip. If you encounter error 11 when writing, make sure you're using a power supply and erase the chip before writing.
 
 To convert the hexdump to a binary to use many tools, run the following commands
