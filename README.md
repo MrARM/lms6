@@ -18,7 +18,7 @@ To convert the hexdump to a binary to use many tools, run the following commands
 ## Modification list
 These are known modifications you can make to the hexdump.
 
-For ease of use with programs like hex editors, all modifications will be written from the perspective of my hex editor. You could just modify the hex file, but it's just easier this way.
+For ease of use with programs like hex editors, all modifications will be written from the perspective of a hex editor. You could just modify the hex file, but it's just easier this way.
 
 ### Change the serial number
 You can change the serial number to any 7 digit number
@@ -27,5 +27,4 @@ You can change the serial number to any 7 digit number
 
 * In the file, go to `0xe003`, you'll replace the 3 bits, you'll see it surrounded by `00`, don't replace those.
 
-If done correctly, you're radiosonde will now have a different serial number. I would not change this number when you aren't testing, you don't want collisions.
-
+If done correctly, your radiosonde will now have a different serial number. I would not change this number when you aren't testing, you don't want collisions with other radiosondes.
