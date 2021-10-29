@@ -28,3 +28,24 @@ You can change the serial number to any 7 digit number
 * In the file, go to `0xe003`, you'll replace the 3 bits, you'll see it surrounded by `00`, don't replace those.
 
 If done correctly, your radiosonde will now have a different serial number. I would not change this number when you aren't testing, you don't want collisions with other radiosondes.
+
+### WIP: Change the TX frequency
+It is possible to change the TX frequency by modifying what is sent to the cc1050(radio) register. 
+
+I'd like to give a huge thanks to [rsavxc](https://github.com/rsaxvc) for providing a Ida db and a reference sheet on the frequency register, here's the respective links for this information.
+
+* [Ida db](https://github.com/rsaxvc/LMS6ReverseEngineering)
+* [CC1050 register calculator](https://github.com/rsaxvc/LMS6APRS/blob/master/docs/cc1050%20frequency%20calculator.ods)
+
+Here's what I've found so far in reguards to changing the frequency.
+
+* The dip switches correspond to a frequency register, also shown in the cc1050 calculator linked above.
+
+* Dip 1 is located at `0x9cdb`
+  ![image](https://user-images.githubusercontent.com/8205849/139383052-db421557-14a8-4b0e-9e23-3f56b16e1660.png)
+  I need to figure out what `05` and `07` mean between the 3 bytes that make the frequency, but it looks constant and also seems to be an easy way to identify the other dip switches.
+  
+* Attempting to change `36 29 7B` (Dip switch 0000, 3549563) to 441.175 MHz (3913363) from the calculator sheet did not work for me, and I theorize it's down to a miscalculation on my end, as you can view on the spectrum, it worked. The downside however, is it does not modulate correctly and takes a large portion of bandwidth. 
+  ![image](https://user-images.githubusercontent.com/8205849/139382481-e60a78e9-be53-4132-9355-fa667b185f0e.png)
+ 
+
