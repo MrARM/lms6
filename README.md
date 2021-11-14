@@ -29,7 +29,7 @@ You can change the serial number to any 7 digit number
 
 If done correctly, your radiosonde will now have a different serial number. I would not change this number when you aren't testing, you don't want collisions with other radiosondes.
 
-### WIP: Change the TX frequency
+### Change the TX frequency
 It is possible to change the TX frequency by modifying what is sent to the cc1050(radio) register. 
 
 I'd like to give a huge thanks to [rsavxc](https://github.com/rsaxvc) for providing a Ida db and a reference sheet on the frequency register, here's the respective links for this information.
@@ -43,9 +43,8 @@ Here's what I've found so far in reguards to changing the frequency.
 
 * Dip 1 is located at `0x9cdb`
   ![image](https://user-images.githubusercontent.com/8205849/139383052-db421557-14a8-4b0e-9e23-3f56b16e1660.png)
-  I need to figure out what `05` and `07` mean between the 3 bytes that make the frequency, but it looks constant and also seems to be an easy way to identify the other dip switches.
+  `03`, `05`, and `07` seem to separate the 3 values. There also seems to be 6 bytes between each register, which I think are related to the FSEP and REFDIV as mentioned on the calculator.
   
-* Attempting to change `36 29 7B` (Dip switch 0000, 3549563) to 441.175 MHz (3913363) from the calculator sheet did not work for me, and I theorize it's down to a miscalculation on my end, as you can view on the spectrum, it worked. The downside however, is it does not modulate correctly and takes a large portion of bandwidth. 
-  ![image](https://user-images.githubusercontent.com/8205849/139382481-e60a78e9-be53-4132-9355-fa667b185f0e.png)
+* Make sure you get these values right, adjust the FSEP and REFDIV to the respective values(I used 10 and 55 to get it working)
  
 
