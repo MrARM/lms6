@@ -14,6 +14,7 @@ To convert the hexdump to a binary to use many tools, run the following commands
 
 ## Repo structure
 * `dumps/` - ROM dumps from LMS6 boards, file names should be named `lms6_<SERIAL>.hex/bin`. Firmware is v1.45 unless otherwise noted.
+* `mods/` - Modified ROMs for example purposes, you might be able to flash it without problems but I'm not sure if calibration data exists and if that would mess your board up.
 
 ## Modification list
 These are known modifications you can make to the hexdump.
