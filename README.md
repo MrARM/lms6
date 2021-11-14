@@ -45,6 +45,11 @@ Here's what I've found so far in reguards to changing the frequency.
   ![image](https://user-images.githubusercontent.com/8205849/139383052-db421557-14a8-4b0e-9e23-3f56b16e1660.png)
   `03`, `05`, and `07` seem to separate the 3 values. There also seems to be 6 bytes between each register, which I think are related to the FSEP and REFDIV as mentioned on the calculator.
   
-* Make sure you get these values right, adjust the FSEP and REFDIV to the respective values(I used 10 and 55 to get it working)
- 
+* Make sure you get these values right, adjust the FSEP and REFDIV to the respective values(I used 10 and 55 to get it working). Try to get your error Hz around the same ones the factory frequencies have.
+![image](https://user-images.githubusercontent.com/8205849/141700639-ef9a757b-2b4a-4b09-a353-f46109d3f80b.png)
 
+Copy the generated number under "FREQ REG Calc" and paste it into column D, and adjust it until it gives a small error, you'll take that number and convert it into hex.  
+
+I made a modified firmware in the mods/ directory using the frequency given in the screenshot if you want to compare or even try and flash it on your own radiosonde. I've noticed some weird issues if you mess up the calculations on this number, such as the bandwidth increasing or other funky business.
+
+TL;DR if you want a ham band frequency and don't care to try to calculate things yourself, replace `03 44 05 AF 07 FE` with `03 47 05 81 07 91` on `0x9D8E` and flip all the dip switches on.
