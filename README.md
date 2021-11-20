@@ -2,6 +2,10 @@
 
 This repo serves as some research to modify the hex dump of the official firmware of the LMS6.
 
+**Most of this information will apply only to the 403 MHz model, you'll know if you have this one as it has an additional wire with no sensors attached to it, that's the antenna**
+
+However, any 1680 firmware dumps I obtain I will also post here.
+
 **DISCLAIMER:** It's not known if hex dumps from other radiosondes will run fine on your radiosonde. I still haven't fully understood all of the differences between the firmware, BUT likely the differences are calibration data and serial number information.
 
 ## Dumping/Programming Tips
